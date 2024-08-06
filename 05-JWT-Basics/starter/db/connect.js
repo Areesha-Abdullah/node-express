@@ -1,12 +1,14 @@
-const mongoose = require('mongoose')
+module.exports = {
+  HOST: 'localhost',
+  USER: 'root',
+  PASSWORD: '',
+  DB: 'login_db',
+  dialect: 'mysql',
 
-const connectDB = (url) => {
-  return mongoose.connect(url, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  })
+  pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+  }
 }
-
-module.exports = connectDB
